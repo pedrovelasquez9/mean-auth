@@ -1,0 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Autenticación con MEAN Stack
+  </h1>
+  <img width="300" alt="Angular Logo" src="https://www.navabrinditsolutions.com/wp-content/uploads/2017/12/mean_stack-about-1.png">
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <div class="row" [hidden]="logged">
+    <div class="col-sm" style="border-right: 1px solid #ddd;">
+      <app-login (change)="getSession($event)"></app-login>
+    </div>
+    <div class="col-sm">
+      <app-registro></app-registro>
+    </div>
+  </div>
+  <div class="row text-center" [hidden]="!logged">
+      <div class="col-sm">
+        <h4>¡Bienvenido {{data?.username}}!</h4>
+        <button class="btn btn-danger" (click)="cerrarSesion()">Salir</button>
+      </div>
+    </div>
+</div>
+
